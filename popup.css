@@ -1,0 +1,159 @@
+body {
+  width: 300px;
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #17171a;
+  background-color: #ffffff;
+}
+
+.popup {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.popup::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  width: 320px;
+  height: 200px;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(closest-side at 40% 55%, rgba(196, 181, 253, 0.32), transparent),
+    radial-gradient(closest-side at 63% 50%, rgba(251, 207, 232, 0.36), transparent);
+  filter: blur(22px);
+  pointer-events: none;
+}
+
+.popup > * {
+  position: relative;
+}
+
+.popup-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.popup-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid #ededf0;
+  cursor: pointer;
+}
+
+.toggle-label {
+  font-size: 15px;
+}
+
+.toggle {
+  appearance: none;
+  position: relative;
+  width: 44px;
+  height: 24px;
+  margin: 0;
+  border-radius: 999px;
+  background-color: #c9c9d1;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.toggle::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  transition: transform 0.15s ease;
+}
+
+.toggle:checked {
+  background-color: #17171a;
+}
+
+.toggle:checked::before {
+  transform: translateX(20px);
+}
+
+.toggle:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.toggle:focus-visible {
+  outline: 2px solid #17171a;
+  outline-offset: 2px;
+}
+
+.reminder-section {
+  margin-top: 20px;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.text-input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid #e4e4e9;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  color: inherit;
+  background-color: #ffffff;
+}
+
+.text-input::placeholder {
+  color: #a0a0aa;
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: #17171a;
+}
+
+.save-button {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 999px;
+  background-color: #17171a;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.save-button:hover:not(:disabled) {
+  background-color: #2e2e33;
+}
+
+.save-button:disabled {
+  cursor: default;
+}

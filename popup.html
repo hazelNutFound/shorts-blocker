@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shorts Blocker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="popup">
+    <h1 class="popup-title">
+      <img class="popup-icon" src="icons/icon48.png" alt="" width="24" height="24">
+      Shorts Blocker
+    </h1>
+
+    <label class="toggle-row">
+      <span class="toggle-label">Block Shorts</span>
+      <input type="checkbox" id="blocking-toggle" class="toggle" disabled>
+    </label>
+
+    <div class="reminder-section">
+      <label class="field-label" for="reminder-input">Reminder message</label>
+      <input type="text" id="reminder-input" class="text-input" maxlength="120" disabled>
+      <button type="button" id="save-button" class="save-button" disabled>Save</button>
+    </div>
+  </main>
+
+  <script src="blocker.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

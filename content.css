@@ -1,0 +1,131 @@
+.sb-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+  background-color: #ededf0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.sb-card {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+  padding: 40px 32px 32px;
+  box-sizing: border-box;
+  border-radius: 24px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.sb-card::before {
+  content: "";
+  position: absolute;
+  top: -110px;
+  left: 50%;
+  width: 360px;
+  height: 230px;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(closest-side at 40% 55%, rgba(196, 181, 253, 0.38), transparent),
+    radial-gradient(closest-side at 63% 50%, rgba(251, 207, 232, 0.42), transparent);
+  filter: blur(22px);
+  pointer-events: none;
+}
+
+.sb-card > * {
+  position: relative;
+}
+
+.sb-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 20px;
+  border-radius: 12px;
+  background-color: #17171a;
+}
+
+.sb-icon::before,
+.sb-icon::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  width: 7px;
+  height: 24px;
+  border-radius: 3px;
+}
+
+.sb-icon::before {
+  left: 14px;
+  background-color: #ffffff;
+}
+
+.sb-icon::after {
+  left: 27px;
+  background-color: #c9b8ff;
+}
+
+.sb-heading {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #17171a;
+}
+
+.sb-message {
+  margin: 0 0 28px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #6b6b76;
+  overflow-wrap: break-word;
+}
+
+.sb-button {
+  display: block;
+  width: 100%;
+  padding: 13px 20px;
+  border: none;
+  border-radius: 999px;
+  background-color: #17171a;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.sb-button:hover:not(:disabled) {
+  background-color: #2e2e33;
+}
+
+.sb-button:disabled {
+  cursor: default;
+}
+
+.sb-button.sb-is-loading::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+  vertical-align: -2px;
+  box-sizing: border-box;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: sb-spin 0.8s linear infinite;
+}
+
+@keyframes sb-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
